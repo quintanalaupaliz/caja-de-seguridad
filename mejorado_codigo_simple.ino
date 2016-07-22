@@ -26,4 +26,19 @@ int sal2 = A1; // salida2, para led verde para inicar que se da acceso al sistem
 int sal3 = A2;//para mostrar que se inserto correctamente el password o PIN led amarillo
 int intento=0;//el numero de veces que se va a ingresar la contraseña
 void setup()
+{
+  lcd.begin(16,2);
+  lcd.write("Seguridad");
+  delay(500);
+  lcd.clear();
+  pinMode(sal1, OUTPUT);
+  pinMode(sal2, OUTPUT);
+  pinMode(sal3,OUTPUT);
+  pinMode(Buzzer, OUTPUT);
+  //digitalWrite(sal3,HIGH);
+  Serial.begin(9600); //Configura la velocidad del puerto serie
+  keypad.setHoldTime(500); // configura la validacion de pulsacion del keypad 1000mS 500
+  keypad.setDebounceTime(50); // configura cuanto tiempo sera presionado 50mS 250
+}
+
 
