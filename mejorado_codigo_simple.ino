@@ -20,6 +20,12 @@ char contra[6]={0,0,0,0,0,0}; // arreglo para comparar
 int estadoPIN=0;
 int z=0;
 int z1=0;
+int Buzzer=A3;//alarma contra robo
+int sal1 = A0; // salida1, para led rojo,activado todo el tiempo indica que la alarma esta activa
+int sal2 = A1; // salida2, para led verde para inicar que se da acceso al sistema
+int sal3 = A2;//para mostrar que se inserto correctamente el password o PIN led amarillo
+int intento=0;//el numero de veces que se va a ingresar la contraseña
+void setup()
 
 
 
