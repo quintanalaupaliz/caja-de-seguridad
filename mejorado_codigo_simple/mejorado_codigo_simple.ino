@@ -126,6 +126,7 @@ for(int zz=0;zz<6;zz++)//borrar tentativa
 {
   contra[zz]=0;
 }
+}
 
 
 
