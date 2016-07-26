@@ -112,7 +112,15 @@ void checkPIN()
   delay(5000); 
   incorrectPIN(); 
   } else
-
+{
+  intentos();
+  lcd.setCursor(0,1);
+  lcd.write("contraseña");
+  delay(1000);
+  lcd.setCursor(0,1);
+  lcd.write("         ");
+  incorrectPIN();
+}
 
 
 
