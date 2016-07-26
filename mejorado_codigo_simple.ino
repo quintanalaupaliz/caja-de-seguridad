@@ -42,6 +42,77 @@ void setup()
   keypad.setDebounceTime(50); // configura cuanto tiempo sera presionado 50mS 250
 }
 
+void loop()
+{ 
+  lcd.setCursor(0,0);
+  lcd.write("Su contraseña");  
+  readKeypad();
+ }
+void readKeypad() 
+{
+  char key = keypad.getKey(); 
+  if (key != NO_KEY)
+  {  Serial.print("su contraseña: ");
+    lcd.setCursor(z,1);
+    lcd.print(key);
+    Serial.println(key);
+    switch(key)
+  { 
+ case '*':
+  z=0; lcd.setCursor(0,1);lcd.print("                ");intentos();
+  break;
+ case '#':
+  delay(50); 
+  lcd.print(" "); 
+   comprobar();
+  break;
+ default:
+  llenarContra(key);
+  } 
+ } 
+}
+void comprobar(){
+if(estadoPIN==0){
+ validar();
+}else{
+ checkPIN(); 
+}
+}
+void llenarContra(char key){
+if(estadoPIN==0){
+PIN[z]=key;
+z++;
+}else{
+  contra[z]=key;
+  z++;
+}
+}
+void checkPIN()
+{ 
+  int correct=0; 
+  for (int q=0; q<=5; q++)
+  { 
+  if (contra[q]==PIN[q])
+   {
+    correct++;
+   } 
+  }
+  if (correct==6)
+  { 
+  intento=0;
+   analogWrite(Buzzer,LOW);
+  lcd.setCursor(0,1);
+  lcd.write("correcto");
+  lcd.setCursor(9,1);
+  lcd.write(contra);
+  lcd.setCursor(0,1);
+  delay(1000);
+  lcd.write("               ");
+   correctPIN();
+  delay(5000); 
+  incorrectPIN(); 
+  } else
+
 
 
 
