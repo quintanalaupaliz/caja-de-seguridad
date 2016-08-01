@@ -124,7 +124,7 @@ void checkPIN()
 }
 for(int zz=0;zz<6;zz++)//borrar tentativa
 {
-  contra[zz]=0;//mmmmm
+  contra[zz]=0;//mmmmm12
 }
 }
 
