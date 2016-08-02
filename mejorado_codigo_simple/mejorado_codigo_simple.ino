@@ -129,4 +129,10 @@ for(int zz=0;zz<6;zz++)//borrar tentativa
 }
 
 
+void correctPIN() // hacer esto. Si el PIN escrito es correcto 
+{
+  digitalWrite(sal1, LOW); // desactiva un contacto pin 1
+  digitalWrite(sal2, HIGH); // activa un contacto pin 2  
+}
+
 
