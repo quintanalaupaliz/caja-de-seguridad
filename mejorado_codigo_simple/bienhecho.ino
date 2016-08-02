@@ -18,7 +18,7 @@ IPAddress ip(192, 168, 1, 177);
 // Initialize the Ethernet server library
 // with the IP address and port you want to use
 // (port 80 is default for HTTP):
-EthernetServer server(8012);
+EthernetServer server(80);
 //char userPass[200];
 //char header[500];
 String header;
