@@ -1,24 +1,13 @@
-/*
- Web Server
- with
- http auth mod by Minh Truong
- 5-18-215
- */
-
 #include <SPI.h>
 #include <Ethernet.h>
-
-// Enter a MAC address and IP address for your controller below.
-// The IP address will be dependent on your local network:
 byte mac[] = {
-  0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED
+  0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED//direccion mac
 };
-IPAddress ip(192, 168, 1, 177);
-
-// Initialize the Ethernet server library
-// with the IP address and port you want to use
-// (port 80 is default for HTTP):
-EthernetServer server(80);
-//char userPass[200];
-//char header[500];
+IPAddress ip(192, 168, 1, 177);//la direccion ip sera dependiente
+EthernetServer server(80);//el puerto 80 es automatico
 String header;
+int pin_estado=6;//es el pin de led
+int led_abier=2;//pin de led puerta abierta
+int led_cerrar=3;//pin de led que esta la puerta cerrada
+int led_error=4;// pin de error
+String estado="OFF"; // estado de led inicialmente Off
