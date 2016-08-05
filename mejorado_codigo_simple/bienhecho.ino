@@ -13,6 +13,11 @@ int led_error=4;// pin de error
 String estado="OFF"; // estado de led inicialmente Off
 
 void setup(){
+  Serial.begin(9600);
+  Ethernet.begin(mac, ip);
+  server.begin();
+  Serial.print("server is at");
+  Serial.println(Ethernet.localIP());
 }
 void loop(){
 }
