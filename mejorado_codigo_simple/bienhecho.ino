@@ -18,6 +18,7 @@ void setup(){
   server.begin();
   Serial.print("server is at");
   Serial.println(Ethernet.localIP());
+  pinMode(led,OUTPUT);
 }
 void loop(){
 }
