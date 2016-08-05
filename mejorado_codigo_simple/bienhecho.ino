@@ -11,3 +11,8 @@ int led_abier=2;//pin de led puerta abierta
 int led_cerrar=3;//pin de led que esta la puerta cerrada
 int led_error=4;// pin de error
 String estado="OFF"; // estado de led inicialmente Off
+
+void setup(){
+}
+void loop(){
+}
