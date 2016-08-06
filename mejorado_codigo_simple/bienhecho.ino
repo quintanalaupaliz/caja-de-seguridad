@@ -24,4 +24,10 @@ void setup(){
   pinMode(led_error,OUTPUT);
 }
 void loop(){
+  EthernetClient client =server.available();//termina con un espacio en blanco
+  if (client){
+  Serial.println("new client");
+  boolean currentLineIsBlank = true;
+  String cadena="";
+  }
 }
