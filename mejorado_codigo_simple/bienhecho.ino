@@ -24,4 +24,11 @@ void setup(){
   pinMode(led_error,OUTPUT);
 }
 void loop(){
+  // escuchar a los clientes entrantes
+  EthernetClient client = server.available();
+  if (client) {
+    Serial.println("new client");
+    // una petición http termina con una línea en blanco
+    boolean currentLineIsBlank = true;
+    String cadena="";
 }
