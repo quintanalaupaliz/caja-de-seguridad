@@ -31,4 +31,9 @@ void loop(){
     // una petición http termina con una línea en blanco
     boolean currentLineIsBlank = true;
     String cadena="";
+     while (client.connected()) {
+      if (client.available()) {
+        char c = client.read();
+        header += c;
+        Serial.write(c);//Visualizamos la petición HTTP por el Monitor Serial
 }
