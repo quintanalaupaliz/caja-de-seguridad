@@ -60,4 +60,7 @@ void loop(){
             client.println("Content-Type: text/html");
             client.println("<html><meta http-equiv='refresh' content='2; url=javascript:window.close();'</html>");
           }
+           if (c == '\n' && currentLineIsBlank) {
+           
+           }
 }
