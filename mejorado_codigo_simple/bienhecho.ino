@@ -24,30 +24,29 @@ void setup(){
   pinMode(led_error,OUTPUT);
 }
 void loop(){
-  // escuchar a los clientes entrantes
-  EthernetClient client = server.available();
-  if (client) {
-    Serial.println("new client");
-    // una petición http termina con una línea en blanco
-    boolean currentLineIsBlank = true;
-    String cadena="";
-     while (client.connected()) {
+
+  EthernetClient client =server.available();//termina con un espacio en blanco
+  if (client){
+  Serial.println("new client");
+  boolean currentLineIsBlank = true;
+  String cadena="";
+  while (client.connected()) {
       if (client.available()) {
         char c = client.read();
         header += c;
-        Serial.write(c);//Visualizamos la petición HTTP por el Monitor Serial
-        cadena.concat(c);//Unimos el String 'cadena' con la petición HTTP (c). De esta manera convertimos la petición HTTP a un String
-          
-        int posicion=cadena.indexOf("LED="); //Guardamos la posición de la instancia "LED=" a la variable 'posicion'
- 
-          if(cadena.substring(posicion)=="LED=ON")//Si a la posición 'posicion' hay "LED=ON"
-          {
+        Serial.write(c);
+        cadena.concat(c);
+        int posicion=cadena.indexOf("LED=");
+       if(cadena.substring(posicion)=="LED=ON") 
+         {
+
             digitalWrite(pin_estado,HIGH);
             digitalWrite(led_abier,HIGH);
             digitalWrite(led_cerrar,LOW);
             digitalWrite(led_error,LOW);
             estado="ON";
           }
+
           if(cadena.substring(posicion)=="LED=OFF")//Si a la posición 'posicion' hay "LED=OFF"
           {
             digitalWrite(pin_estado,LOW);
@@ -63,4 +62,5 @@ void loop(){
            if (c == '\n' && currentLineIsBlank) {
            
            }
+
 }
