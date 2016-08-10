@@ -36,4 +36,28 @@ void loop(){
         char c = client.read();
         header += c;
         Serial.write(c);//Visualizamos la petición HTTP por el Monitor Serial
+        cadena.concat(c);//Unimos el String 'cadena' con la petición HTTP (c). De esta manera convertimos la petición HTTP a un String
+          
+        int posicion=cadena.indexOf("LED="); //Guardamos la posición de la instancia "LED=" a la variable 'posicion'
+ 
+          if(cadena.substring(posicion)=="LED=ON")//Si a la posición 'posicion' hay "LED=ON"
+          {
+            digitalWrite(pin_estado,HIGH);
+            digitalWrite(led_abier,HIGH);
+            digitalWrite(led_cerrar,LOW);
+            digitalWrite(led_error,LOW);
+            estado="ON";
+          }
+          if(cadena.substring(posicion)=="LED=OFF")//Si a la posición 'posicion' hay "LED=OFF"
+          {
+            digitalWrite(pin_estado,LOW);
+            digitalWrite(led_abier,LOW);
+            digitalWrite(led_cerrar,HIGH);
+            digitalWrite(led_error,LOW);
+            estado="OFF";
+            client.println("HTTP/1.1 200 OK");
+            client.println("WWW-Authenticate: Basic realm=\"Secure\"");
+            client.println("Content-Type: text/html");
+            client.println("<html><meta http-equiv='refresh' content='2; url=javascript:window.close();'</html>");
+          }
 }
