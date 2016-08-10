@@ -34,5 +34,15 @@ void loop(){
         char c = client.read();
         header += c;
         Serial.write(c);
+        cadena.concat(c);
+        int posicion=cadena.indexOf("LED=");
+       if(cadena.substring(posicion)=="LED=ON") 
+         {
+            digitalWrite(pin_estado,HIGH);
+            digitalWrite(led_abier,HIGH);
+            digitalWrite(led_cerrar,LOW);
+            digitalWrite(led_error,LOW);
+            estado="ON";
+          }
   }
 }
