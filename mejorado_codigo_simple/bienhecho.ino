@@ -29,5 +29,10 @@ void loop(){
   Serial.println("new client");
   boolean currentLineIsBlank = true;
   String cadena="";
+  while (client.connected()) {
+      if (client.available()) {
+        char c = client.read();
+        header += c;
+        Serial.write(c);
   }
 }
