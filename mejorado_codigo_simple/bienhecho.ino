@@ -1,12 +1,12 @@
 #include <Ethernet.h>
 #include <SPI.h>
-#include <ubidotsEthernet.h>
+#include <UbidotsEthernet.h>
 #define ID  "57aa12c47625426b1fb06afb"//Ponga aqui sus Ubidots variable de identificación
 #define TOKEN  "M5m0HYi2kBwregZvyC9SjvybgWy4SQ" //Ponga aqui Ubidots TOKEN
 byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED};//direccion mac
 IPAddress ip(192, 168, 1, 177);//la direccion ip sera dependiente
 
-ubidots client(token);
+Ubidots client(TOKEN);
 int servo_uno = 2;//es el pin para el primer servo
 int servo_dos = 3;//es el pin para el segundo servo
 int led_estado = 4;
