@@ -1,8 +1,9 @@
 #include <Ethernet.h>
 #include <SPI.h>
 #include <ubidotsEthernet.h>
+#define ID  "57aa12c47625426b1fb06afb"//Ponga aqui sus Ubidots variable de identificación
 byte mac[] = {
-  0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED//direccion mac
+  0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED};//direccion mac
 };
 IPAddress ip(192, 168, 1, 177);//la direccion ip sera dependiente
 
