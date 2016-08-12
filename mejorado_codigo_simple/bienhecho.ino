@@ -20,11 +20,13 @@ void setup(){
   //tratar de configurar utilizando la direccion IP en lugar de DHCP
   Ethernet.begin(mac, ip);
   }
+  //dar el Ethernet proteger un segundo para inicializar :
   pinMode(servo_uno,OUTPUT);
   pinMode(servo_dos,OUTPUT);
   pinMode(led_estado,OUTPUT);
   pinMode(led_abierto,OUTPUT);
   pinMode(led_cerrado,OUTPUT);
+  delay(1000);
 }
 void loop(){
     float estado_puerta = client.getValue(ID);
