@@ -2,6 +2,7 @@
 #include <SPI.h>
 #include <ubidotsEthernet.h>
 #define ID  "57aa12c47625426b1fb06afb"//Ponga aqui sus Ubidots variable de identificación
+#define TOKEN  "M5m0HYi2kBwregZvyC9SjvybgWy4SQ" //Ponga aqui Ubidots TOKEN
 byte mac[] = {
   0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED};//direccion mac
 };
