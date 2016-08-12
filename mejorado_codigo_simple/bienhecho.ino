@@ -26,7 +26,8 @@ void setup(){
   pinMode(led_cerrado,OUTPUT);
 }
 void loop(){
-
+    float estado_puerta = client.getValue(ID);
+    digitalWrite(led_estado,HIGH);
   
   if(estado_puerta == 1){
             digitalWrite(servo_uno,HIGH);
