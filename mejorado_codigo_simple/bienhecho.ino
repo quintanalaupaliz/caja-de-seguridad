@@ -27,17 +27,13 @@ void setup(){
 }
 void loop(){
 
-  EthernetClient client =server.available();//termina con un espacio en blanco
+  
   if(estado_puerta == 1){
-   
-         {
-
-            digitalWrite(pin_estado,HIGH);
-            digitalWrite(led_abier,HIGH);
-            digitalWrite(led_cerrar,LOW);
-            digitalWrite(led_error,LOW);
-            estado="ON";
-          }          
+            digitalWrite(servo_uno,HIGH);
+            digitalWrite(servo_dos,HIGH);
+            digitalWrite(led_abierto,LOW);
+            digitalWrite(led_cerrado,LOW);
+          }  else{        
             
       digitalWrite(servo_uno,LOW);
       digitalWrite(servo_dos,HIGH);
@@ -46,5 +42,3 @@ void loop(){
           }
                     
            }
-
-}
