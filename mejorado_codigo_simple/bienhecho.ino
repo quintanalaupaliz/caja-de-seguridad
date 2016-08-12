@@ -38,11 +38,11 @@ void loop(){
             digitalWrite(led_error,LOW);
             estado="ON";
           }          
-            digitalWrite(pin_estado,LOW);
-            digitalWrite(led_abier,LOW);
-            digitalWrite(led_cerrar,HIGH);
-            digitalWrite(led_error,LOW);
             
+      digitalWrite(servo_uno,LOW);
+      digitalWrite(servo_dos,HIGH);
+      digitalWrite(led_abierto,LOW);
+      digitalWrite(led_cerrado,HIGH); 
           }
                     
            }
