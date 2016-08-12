@@ -1,5 +1,6 @@
-#include <SPI.h>
 #include <Ethernet.h>
+#include <SPI.h>
+#include <ubidotsEthernet.h>
 byte mac[] = {
   0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED//direccion mac
 };
