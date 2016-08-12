@@ -53,14 +53,9 @@ void loop(){
             digitalWrite(led_abier,LOW);
             digitalWrite(led_cerrar,HIGH);
             digitalWrite(led_error,LOW);
-            estado="OFF";
-            client.println("HTTP/1.1 200 OK");
-            client.println("WWW-Authenticate: Basic realm=\"Secure\"");
-            client.println("Content-Type: text/html");
-            client.println("<html><meta http-equiv='refresh' content='2; url=javascript:window.close();'</html>");
+            
           }
-           if (c == '\n' && currentLineIsBlank) {
-           
+                    
            }
 
 }
