@@ -3,9 +3,7 @@
 #include <ubidotsEthernet.h>
 #define ID  "57aa12c47625426b1fb06afb"//Ponga aqui sus Ubidots variable de identificación
 #define TOKEN  "M5m0HYi2kBwregZvyC9SjvybgWy4SQ" //Ponga aqui Ubidots TOKEN
-byte mac[] = {
-  0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED};//direccion mac
-};
+byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED};//direccion mac
 IPAddress ip(192, 168, 1, 177);//la direccion ip sera dependiente
 
 ubidots client(token);
@@ -36,8 +34,8 @@ void loop(){
   
   if(estado_puerta == 1){
             digitalWrite(servo_uno,HIGH);
-            digitalWrite(servo_dos,HIGH);
-            digitalWrite(led_abierto,LOW);
+            digitalWrite(servo_dos,LOW);
+            digitalWrite(led_abierto,HIGH);
             digitalWrite(led_cerrado,LOW);
           }  else{        
             
